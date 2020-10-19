@@ -1,6 +1,5 @@
 # Shopping List App Challenge
-
-This repo contains starter files for the *Shopping List App* challenge.
+https://corinasalazar.github.io/shopping-list/
 
 ## In terms of user experience, your shopping list app must allow users to:
 
