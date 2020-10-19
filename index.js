@@ -1,6 +1,6 @@
 /* eslint-disable strict */
 $(function() {
-  $('#js-shopping-list-form').on('submit', function(e){
+  let addNewItem = function(e){
       e.preventDefault();
       let newItem = $('#shopping-list-entry').val();
       let listTemplate = `<li>
@@ -15,7 +15,16 @@ $(function() {
       </div>
     </li>`;
     $('.shopping-list').append(listTemplate);
-  });
+    $('#shopping-list-entry').val("")
+  };
+
+  $('#shopping-list-entry').keydown(function(e){
+    if(e.key === 'Enter'){
+        addNewItem(e);
+    }
+  })
+
+  $('#js-shopping-list-form').on('submit', addNewItem);
 
   $('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
     $(this).closest('li').children('.shopping-item').toggleClass('shopping-item__checked');
